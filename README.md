@@ -45,6 +45,8 @@ O **MostruárioApp** simplifica a conferência e o acerto de mercadorias em cons
 mostruarioapp_lp/
 ├── assets/
 │   ├── images/
+│   │   ├── mostruarioapp.svg # Logo oficial em vetor SVG
+│   │   ├── app-screen.png    # Captura da tela real do app
 │   │   ├── logo.png          # Logo institucional
 │   │   └── logowobg.png      # Logo oficial com fundo transparente
 │   └── favico.ico            # Cópia de segurança do favicon
@@ -54,6 +56,8 @@ mostruarioapp_lp/
 │   └── main.js               # Configurações do Tailwind, interações e lógica do simulador
 ├── favico.ico                # Ícone de aba do navegador
 ├── index.html                # Página principal da Landing Page
+├── privacidade.html          # Política de Privacidade (LGPD & Google Play)
+├── termos-de-uso.html        # Termos de Uso e Condições Gerais
 └── README.md                 # Documentação do projeto
 ```
 

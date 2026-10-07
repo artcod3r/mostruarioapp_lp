@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - MostruárioApp</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favico.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/images/mostruarioapp.svg">
+    <link rel="apple-touch-icon" href="assets/images/mostruarioapp.svg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 flex flex-col min-h-screen">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/images/mostruarioapp.svg" alt="MostruárioApp Logo"
+                    class="w-10 h-10 rounded-xl object-contain drop-shadow-sm group-hover:scale-105 transition-transform">
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 leading-none">Mostruário<span
+                            class="text-amber-600">App</span></span>
+                    <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mt-1">100% Offline-First</span>
+                </div>
+            </a>
+
+            <!-- Back to Home -->
+            <a href="index.html"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold transition-all">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Voltar ao Início</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 w-full">
+
+        <!-- Page Header -->
+        <div class="mb-10 text-center sm:text-left border-b border-slate-200 pb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200 mb-3">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                Privacidade por Design (Offline-First)
+            </span>
+            <h1 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Política de Privacidade
+            </h1>
+            <p class="mt-2 text-sm text-slate-500">
+                Última atualização: Outubro de 2026 • Em conformidade com a LGPD (Lei nº 13.709/2018) e Google Play Developer Policies
+            </p>
+        </div>
+
+        <!-- Privacy Highlights Banner -->
+        <div class="mb-10 p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-slate-800 flex items-start gap-3.5">
+            <i data-lucide="info" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+            <div class="text-xs sm:text-sm leading-relaxed">
+                <strong>Resumo Transparente:</strong> O <strong>MostruárioApp</strong> funciona sob a arquitetura estrita de <em>Offline-First</em>. Seus dados contábeis, lista de revendedoras/pontos parceiros, inventários, fotos de produtos, romaneios e assinaturas <strong>nunca são transmitidos para servidores remotos nem vendidos a terceiros</strong>. Todos os dados permanecem salvos localmente no banco de dados SQLite do seu próprio celular.
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="space-y-10 text-slate-700 text-sm sm:text-base leading-relaxed">
+
+            <!-- Section 1 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">1</span>
+                    Identificação do Controlador
+                </h2>
+                <p>
+                    Esta aplicação é mantida e disponibilizada pela <strong>ARTCODER SISTEMAS E TECNOLOGIA LTDA</strong> ("ArtCoder", "nós" ou "desenvolvedora"). Atuamos como fornecedores do software para controle autônomo de consignações comerciais e acertos presenciais.
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">2</span>
+                    Arquitetura Offline-First e Armazenamento Local
+                </h2>
+                <p>
+                    Diferente de sistemas convencionais baseados em nuvem (SaaS), o <strong>MostruárioApp</strong> foi projetado com isolamento de dados:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li><strong>Banco de dados SQLite Local:</strong> Todo o armazenamento de informações operacionais ocorre na sandbox privada do sistema operacional do seu dispositivo móvel (Android).</li>
+                    <li><strong>Sem Conexão Obrigatória:</strong> A aplicação não realiza chamadas de sincronização em segundo plano para servidores próprios da ArtCoder para espelhar ou processar seus registros.</li>
+                    <li><strong>Sem Coleta de Telemetria Invasiva:</strong> Não utilizamos bibliotecas analíticas que rastreiem identificadores de publicidade (GAID) associados à sua identidade real.</li>
+                </ul>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">3</span>
+                    Dados Operacionais Inseridos pelo Usuário
+                </h2>
+                <p>
+                    Para o pleno funcionamento das funcionalidades de gestão, você pode inserir diretamente no aplicativo:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li><strong>Dados de Parceiros e Pontos de Venda:</strong> Nomes comerciais, contatos de WhatsApp, endereços e notas operacionais de consignação.</li>
+                    <li><strong>Catálogo e Inventário:</strong> Nomes de itens, preços de vitrine, repasses, margens fixas e quantitativos em comodato.</li>
+                    <li><strong>Chave Pix:</strong> Caso opte por utilizar a cobrança Pix no balcão, sua chave Pix (CPF/CNPJ, e-mail, telefone ou chave aleatória) é armazenada localmente para a geração matemática instantânea do código EMV BRCode sem intermediários.</li>
+                    <li><strong>Assinatura Digital no Touch:</strong> Traços colhidos na tela do celular para compor o arquivo PDF do romaneio de saída ou recibo de acerto.</li>
+                </ul>
+                <p class="text-xs text-slate-500 bg-slate-100 p-3 rounded-xl">
+                    <strong>Importante:</strong> Você, na qualidade de operador comercial, é o responsável legal pela legitimidade das informações de parceiros e clientes que cadastra em seu dispositivo, em observância à LGPD.
+                </p>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">4</span>
+                    Serviços de Terceiros e Google Play Billing
+                </h2>
+                <p>
+                    O aplicativo interage exclusivamente com os seguintes serviços do ecossistema móvel:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li><strong>Google Play In-App Billing:</strong> Para o desbloqueio da versão PRO (Vitalícia ou Assinatura), a transação é processada diretamente pela Google Play Store. A ArtCoder <strong>não tem acesso a números de cartões de crédito</strong>, senhas ou dados bancários do usuário. Todo o processamento financeiro é regido pelos Termos de Serviço da Google LLC.</li>
+                    <li><strong>Compartilhamento Voluntário (Android Intent):</strong> Ao gerar um romaneio em PDF ou arquivo de backup, o envio via WhatsApp, e-mail ou nuvem é acionado exclusivamente por comando intencional do próprio usuário.</li>
+                </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">5</span>
+                    Retenção, Backup e Exclusão Definitiva dos Dados
+                </h2>
+                <p>
+                    Por ser uma aplicação estritamente local:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li><strong>Exclusão Total:</strong> Ao desinstalar o MostruárioApp do seu aparelho ou selecionar a opção "Limpar Dados de Armazenamento" nas configurações do Android, todos os registros locais no banco SQLite são <strong>permanentemente eliminados</strong> do dispositivo.</li>
+                    <li><strong>Responsabilidade por Backups:</strong> A integridade dos dados depende da realização periódica de backups pelo usuário por meio da funcionalidade de exportação em arquivo estruturado.</li>
+                </ul>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="seguranca" class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">6</span>
+                    Segurança das Informações
+                </h2>
+                <p>
+                    A segurança das suas informações operacionais é resguardada pelas proteções nativas de sandbox do sistema Android (isolamento de processos e criptografia a nível de dispositivo) e pela ausência de canais de transmissão para servidores externos não solicitados.
+                </p>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="space-y-3">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">7</span>
+                    Alterações nesta Política
+                </h2>
+                <p>
+                    Poderemos atualizar esta Política de Privacidade para refletir melhorias no aplicativo ou adequações legais. Qualquer alteração substancial será sinalizada nas notas de versão da atualização na Google Play Store e nesta página pública.
+                </p>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="contato" class="space-y-3 border-t border-slate-200 pt-6">
+                <h2 class="font-heading font-bold text-xl text-slate-900 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">8</span>
+                    Canal de Contato e DPO / Encarregado de Dados
+                </h2>
+                <p>
+                    Em caso de dúvidas sobre a privacidade do aplicativo ou suporte técnico, entre em contato com nossa equipe:
+                </p>
+                <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1 text-sm">
+                    <p><strong>Desenvolvedora:</strong> ARTCODER SISTEMAS E TECNOLOGIA LTDA</p>
+                    <p><strong>Produto:</strong> MostruárioApp (Android)</p>
+                    <p><strong>Site Oficial:</strong> <a href="https://mostruarioapp.com.br" class="text-amber-600 hover:underline">https://mostruarioapp.com.br</a></p>
+                    <p><strong>Canal de Privacidade & Suporte:</strong> suporte@artcoder.com.br</p>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900 text-xs mt-auto">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <img src="assets/images/mostruarioapp.svg" alt="Logo" class="w-6 h-6 object-contain">
+                <span class="font-heading font-bold text-white text-sm">Mostruário<span class="text-amber-500">App</span></span>
+                <span class="text-slate-600">|</span>
+                <span>© 2026 ARTCODER SISTEMAS E TECNOLOGIA LTDA</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="hover:text-amber-400 transition-colors">Início</a>
+                <a href="termos-de-uso.html" class="hover:text-amber-400 transition-colors">Termos de Uso</a>
+                <a href="privacidade.html" class="text-white font-semibold">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>

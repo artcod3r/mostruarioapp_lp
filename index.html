@@ -7,7 +7,8 @@
     <title>MostruárioApp - Controle de Maletas, Consignações e Acertos 100% Offline</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favico.ico">
-    <link rel="apple-touch-icon" href="assets/images/logowobg.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/mostruarioapp.svg">
+    <link rel="apple-touch-icon" href="assets/images/mostruarioapp.svg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Plus Jakarta Sans -->
@@ -33,7 +34,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <img src="assets/images/logowobg.png" alt="MostruárioApp Logo"
+                <img src="assets/images/mostruarioapp.svg" alt="MostruárioApp Logo"
                     class="w-10 h-10 rounded-xl object-contain drop-shadow-sm group-hover:scale-105 transition-transform">
                 <div class="flex flex-col">
                     <span
@@ -147,154 +148,222 @@
                         </button>
 
                         <span class="text-xs text-slate-500 flex items-center gap-1 font-medium">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> Grátis até 3 pontos
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> Grátis até 3 parceiros
                         </span>
                     </div>
 
-                    <!-- Social Proof Mini Banner -->
+                    <!-- Product Highlights (100% Factual) -->
                     <div
-                        class="pt-4 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-600">
-                        <div class="flex -space-x-2">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80"
-                                alt="Usuária">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
-                                alt="Usuário">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
-                                alt="Usuária">
+                        class="pt-4 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-600">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 font-medium shadow-xs">
+                            <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i>
+                            <span>Agilidade no acerto presencial</span>
                         </div>
-                        <div>
-                            <div class="flex text-amber-400 text-xs">
-                                ★★★★★
-                            </div>
-                            <p class="text-xs font-semibold text-slate-700">+1.400 maletas e kits acertados sem erros
-                            </p>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-slate-700 font-medium shadow-xs">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                            <span>100% autônomo sem internet</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Mobile Device Interactive Simulation Mockup -->
+                <!-- Right: Mobile Device Interactive Simulation Mockup (Tela Real do MostruárioApp) -->
                 <div class="lg:col-span-5 flex justify-center">
                     <div
-                        class="relative w-full max-w-[340px] rounded-[44px] bg-slate-900 p-3 shadow-2xl ring-1 ring-slate-800 glow-amber">
-                        <!-- Speaker notch & sensors -->
+                        class="relative w-full max-w-[340px] rounded-[48px] bg-slate-900 p-3 shadow-2xl ring-1 ring-slate-800 glow-amber">
+                        <!-- Dynamic Island / Speaker notch -->
                         <div
-                            class="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-4 bg-slate-950 rounded-full flex items-center justify-center gap-2 z-20">
-                            <div class="w-3 h-3 rounded-full bg-slate-900 border border-slate-700"></div>
-                            <div class="w-10 h-1.5 rounded-full bg-slate-800"></div>
+                            class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-950 rounded-full flex items-center justify-between px-3 z-30">
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-800"></div>
                         </div>
 
                         <!-- Inner Phone Display -->
                         <div
-                            class="relative rounded-[36px] bg-slate-950 overflow-hidden text-white flex flex-col h-[640px] border border-slate-800 select-none">
-
-                            <!-- App Bar -->
+                            class="relative rounded-[40px] bg-slate-50 overflow-hidden text-slate-800 flex flex-col h-[680px] border border-slate-200 select-none shadow-inner font-sans">
+                            <!-- Status bar -->
                             <div
-                                class="pt-8 px-4 pb-3 bg-slate-900 flex items-center justify-between border-b border-slate-800">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                                    <span class="text-xs font-bold text-slate-300">Modo Offline Ativo</span>
+                                class="pt-3 px-5 pb-1 flex items-center justify-between text-[11px] font-semibold text-slate-900 z-20">
+                                <span>14:49</span>
+                                <div class="flex items-center gap-1.5 text-slate-800">
+                                    <div class="flex items-end gap-0.5 h-2.5">
+                                        <span class="w-0.5 h-1 bg-slate-800 rounded-full"></span>
+                                        <span class="w-0.5 h-1.5 bg-slate-800 rounded-full"></span>
+                                        <span class="w-0.5 h-2 bg-slate-800 rounded-full"></span>
+                                        <span class="w-0.5 h-2.5 bg-slate-800 rounded-full"></span>
+                                    </div>
+                                    <i data-lucide="wifi" class="w-3 h-3"></i>
+                                    <i data-lucide="battery" class="w-3.5 h-3.5"></i>
                                 </div>
-                                <span
-                                    class="text-[11px] font-mono bg-slate-800 px-2 py-0.5 rounded text-amber-400">SQLite
-                                    Local</span>
                             </div>
 
-                            <!-- Content inside phone -->
-                            <div class="p-4 flex-1 overflow-y-auto space-y-4 text-left">
+                            <!-- App Bar -->
+                            <div class="px-4 py-2 flex items-center justify-between bg-white border-b border-slate-100">
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-7 h-7 rounded-lg bg-[#273244] flex items-center justify-center p-1 shadow-sm">
+                                        <img src="assets/images/mostruarioapp.svg" alt="MostruárioApp Logo"
+                                            class="w-full h-full object-contain">
+                                    </div>
+                                    <span class="font-heading font-extrabold text-base tracking-tight text-slate-900">
+                                        Mostruário<span class="text-[#701a35]">App</span>
+                                    </span>
+                                </div>
+                                <div class="text-slate-500 hover:text-slate-800 p-1">
+                                    <i data-lucide="settings" class="w-4 h-4 text-slate-600"></i>
+                                </div>
+                            </div>
 
-                                <!-- Partner Header Card -->
-                                <div class="bg-slate-900/90 p-3 rounded-2xl border border-slate-800">
-                                    <div class="flex justify-between items-start">
-                                        <div>
+                            <!-- Phone Body Content -->
+                            <div class="px-3 py-2.5 pb-14 flex-1 overflow-y-auto space-y-3 bg-slate-50 text-left">
+                                <!-- Card 1: TOTAL A RECEBER -->
+                                <div
+                                    class="bg-white rounded-2xl p-3.5 border border-[#701a35]/25 shadow-sm space-y-2.5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-1.5 text-[#701a35]">
+                                            <i data-lucide="wallet" class="w-3.5 h-3.5"></i>
                                             <span
-                                                class="text-[10px] text-amber-400 font-bold uppercase tracking-wide">Ponto
-                                                Comercial #04</span>
-                                            <h4 class="font-bold text-sm text-slate-100">Panificadora Estrela</h4>
+                                                class="text-[10px] font-bold tracking-wider uppercase text-slate-500">TOTAL
+                                                A RECEBER</span>
                                         </div>
                                         <span
-                                            class="px-2 py-0.5 rounded-md text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-800">Margem
-                                            Fixa</span>
+                                            class="text-[9.5px] font-semibold px-2 py-0.5 rounded-md bg-[#fcecef] text-[#701a35]">
+                                            Capital Próprio
+                                        </span>
                                     </div>
-                                    <div
-                                        class="mt-2 text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-800/60 pt-2">
-                                        <span>Comodato: <strong>1 Expositor Acrílico</strong></span>
-                                        <span class="text-emerald-400">Em dia</span>
+
+                                    <div>
+                                        <div class="text-2xl font-extrabold text-[#701a35] font-sans tracking-tight">R$
+                                            72,00</div>
+                                        <div class="text-[11px] text-slate-500 mt-0.5">Vitrine: R$ 108,00</div>
+                                    </div>
+
+                                    <div class="pt-2.5 border-t border-slate-100 grid grid-cols-3 gap-1">
+                                        <div>
+                                            <div class="text-[9.5px] text-slate-400 font-medium">Total Peças</div>
+                                            <div class="text-xs font-bold text-slate-800 mt-0.5">9 un</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[9.5px] text-slate-400 font-medium">Comodatos</div>
+                                            <div class="text-xs font-bold text-slate-800 mt-0.5">1 displays</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[9.5px] text-slate-400 font-medium">Cobranças</div>
+                                            <div class="text-xs font-bold text-emerald-600 mt-0.5">Em dia</div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- Reverse Count Block -->
-                                <div class="bg-slate-900/70 p-3.5 rounded-2xl border border-slate-800 space-y-2">
-                                    <div class="flex justify-between items-center text-xs">
-                                        <span class="text-slate-300 font-medium">Kit Balcão (9 Ímãs)</span>
-                                        <span class="text-[11px] text-slate-400">R$ 15,00 cada</span>
+                                <!-- Section title: Maletas em Consignação (1) -->
+                                <div class="flex items-center justify-between pt-0.5 px-0.5">
+                                    <h4 class="font-bold text-xs text-slate-900">Maletas em Consignação (1)</h4>
+                                    <button class="text-slate-400 hover:text-slate-600" aria-label="Atualizar">
+                                        <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Card 2: Panificadora Central -->
+                                <div class="bg-white rounded-2xl p-3.5 border border-[#701a35]/25 shadow-sm relative">
+                                    <div>
+                                        <h5 class="font-bold text-xs text-slate-900">Panificadora Central</h5>
+                                        <p class="text-[10px] text-slate-400">Ponto Fixo</p>
                                     </div>
 
-                                    <div
-                                        class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
-                                        <div>
-                                            <p class="text-[10px] uppercase text-slate-500 font-bold">Sobraram no
-                                                display</p>
-                                            <p class="text-lg font-bold text-amber-400">3 unidades</p>
+                                    <div class="mt-2 flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="text-[9.5px] font-semibold px-2 py-0.5 rounded-md bg-[#fcecef] text-[#701a35]">
+                                                Margem Fixa
+                                            </span>
+                                            <span class="text-[10px] text-slate-500">9 peças no kit</span>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-[10px] uppercase text-slate-500 font-bold">Vendidas
-                                                (Calculado)</p>
-                                            <p class="text-lg font-bold text-emerald-400">6 vendidas</p>
+                                            <div class="text-xs font-bold text-[#701a35]">R$ 72,00</div>
+                                            <div class="text-[9.5px] text-slate-400">Vitrine: R$ 108,00</div>
                                         </div>
                                     </div>
+
+                                    <div class="mt-2 text-[10px] text-slate-400">
+                                        Última visita: Hoje
+                                    </div>
+
+                                    <button
+                                        class="w-full mt-3 py-2.5 px-3 rounded-xl bg-[#701a35] hover:bg-[#5b152b] text-white font-bold text-[11px] flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+                                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                                        <span>Fazer Acerto / Renovar Kit</span>
+                                    </button>
                                 </div>
 
-                                <!-- Settlement Breakdown -->
-                                <div
-                                    class="bg-gradient-to-br from-slate-900 to-slate-900/40 p-3.5 rounded-2xl border border-amber-500/30 space-y-2">
-                                    <div class="flex justify-between text-xs text-slate-400">
-                                        <span>Bruto na Vitrine (6 × R$ 15,00)</span>
-                                        <span class="text-slate-200 font-mono">R$ 90,00</span>
+                                <!-- Card 2: Sorveteria do Parque -->
+                                <div class="bg-white rounded-2xl p-3.5 border border-[#701a35]/25 shadow-sm relative">
+                                    <div>
+                                        <h5 class="font-bold text-xs text-slate-900">Sorveteria do Parque</h5>
+                                        <p class="text-[10px] text-slate-400">Ponto Fixo</p>
                                     </div>
-                                    <div class="flex justify-between text-xs text-slate-400">
-                                        <span>Lucro do Balcão (Parceiro)</span>
-                                        <span class="text-indigo-400 font-mono">- R$ 30,00</span>
-                                    </div>
-                                    <div class="pt-2 border-t border-slate-800 flex justify-between items-baseline">
-                                        <span class="text-xs font-bold text-slate-200">Seu Repasse Líquido:</span>
-                                        <span class="text-xl font-extrabold text-amber-400 font-mono">R$ 60,00</span>
-                                    </div>
-                                </div>
 
-                                <!-- Instant Offline Pix Simulation Inside Phone -->
-                                <div
-                                    class="bg-slate-900 p-3 rounded-2xl border border-slate-800 flex items-center gap-3">
-                                    <div class="bg-white p-1 rounded-lg shrink-0">
-                                        <!-- Faux QR SVG -->
-                                        <svg class="w-12 h-12 text-slate-950" viewBox="0 0 24 24" fill="currentColor">
-                                            <path
-                                                d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h4v4h-4v-4zm-4-4h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v4h-2v-4zm4-2h2v2h-2v-2z" />
-                                        </svg>
+                                    <div class="mt-2 flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="text-[9.5px] font-semibold px-2 py-0.5 rounded-md bg-[#fcecef] text-[#701a35]">
+                                                Margem Fixa
+                                            </span>
+                                            <span class="text-[10px] text-slate-500">9 peças no kit</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-xs font-bold text-[#701a35]">R$ 72,00</div>
+                                            <div class="text-[9.5px] text-slate-400">Vitrine: R$ 108,00</div>
+                                        </div>
                                     </div>
-                                    <div class="min-w-0 flex-1">
-                                        <p class="text-[11px] font-bold text-slate-200 leading-tight">Cobrar no Pix
-                                            Offline</p>
-                                        <p class="text-[10px] text-slate-400 truncate">EMV BRCode gerado na hora</p>
-                                        <span
-                                            class="inline-block mt-1 text-[9px] bg-emerald-500/20 text-emerald-300 font-bold px-1.5 py-0.5 rounded">R$
-                                            60,00</span>
-                                    </div>
-                                </div>
 
-                                <!-- Quick Action Button in Phone -->
-                                <button
-                                    class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-amber-600/20">
-                                    <i data-lucide="check-check" class="w-4 h-4"></i>
-                                    Acertar & Renovar Kit (9 un)
+                                    <div class="mt-2 text-[10px] text-slate-400">
+                                        Última visita: Hoje
+                                    </div>
+
+                                    <button
+                                        class="w-full mt-3 py-2.5 px-3 rounded-xl bg-[#701a35] hover:bg-[#5b152b] text-white font-bold text-[11px] flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+                                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                                        <span>Fazer Acerto / Renovar Kit</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Floating Action Button (FAB) -->
+                            <div class="absolute bottom-[66px] right-3.5 z-20 pointer-events-auto">
+                                <button type="button"
+                                    class="inline-flex items-center gap-1.5 py-2 px-3.5 rounded-2xl bg-[#701a35] hover:bg-[#5b152b] text-white font-bold text-[11px] shadow-2xl ring-2 ring-white/30 hover:scale-105 active:scale-95 transition-transform cursor-pointer">
+                                    <i data-lucide="plus" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+                                    <span>Nova Maleta / Kit</span>
                                 </button>
                             </div>
 
-                            <!-- Phone Bottom Indicator -->
-                            <div class="py-2 flex justify-center bg-slate-900">
-                                <div class="w-24 h-1 rounded-full bg-slate-700"></div>
+                            <!-- Bottom Navigation Bar -->
+                            <div
+                                class="bg-white border-t border-slate-200 px-2 py-1.5 grid grid-cols-4 gap-1 text-center shrink-0">
+                                <div class="flex flex-col items-center">
+                                    <div
+                                        class="w-10 py-0.5 rounded-full bg-[#fcecef] flex items-center justify-center text-[#701a35]">
+                                        <i data-lucide="store" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <span class="text-[9px] font-bold text-[#701a35] mt-0.5">Consignados</span>
+                                </div>
+                                <div class="flex flex-col items-center text-slate-500">
+                                    <i data-lucide="package" class="w-3.5 h-3.5 mt-0.5"></i>
+                                    <span class="text-[9px] font-medium mt-1">Produtos</span>
+                                </div>
+                                <div class="flex flex-col items-center text-slate-500">
+                                    <i data-lucide="users" class="w-3.5 h-3.5 mt-0.5"></i>
+                                    <span class="text-[9px] font-medium mt-1">Parceiros</span>
+                                </div>
+                                <div class="flex flex-col items-center text-slate-500">
+                                    <i data-lucide="badge-check" class="w-3.5 h-3.5 mt-0.5"></i>
+                                    <span class="text-[9px] font-medium mt-1">Meus dados</span>
+                                </div>
+                            </div>
+
+                            <!-- Phone Bottom Bar Indicator -->
+                            <div class="py-1 bg-white flex justify-center shrink-0">
+                                <div class="w-24 h-1 rounded-full bg-slate-900"></div>
                             </div>
                         </div>
                     </div>
@@ -730,71 +799,115 @@
         </div>
     </section>
 
-    <!-- Target Personas / Real Cases -->
+    <!-- Target Segments & Real Use Cases (Factual) -->
     <section class="py-20 bg-slate-100/60 border-y border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span
-                    class="text-xs uppercase tracking-widest font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Feito
-                    sob Medida</span>
+                    class="text-xs uppercase tracking-widest font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Segmentos
+                    Atendidos</span>
                 <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
-                    Quem já transformou o modo de vender
+                    Projetado para os dois grandes modelos de consignação
                 </h2>
+                <p class="mt-3 text-slate-600 text-sm sm:text-base">
+                    Seja você um produtor de kits de balcão ou distribuidor de maletas, o MostruárioApp elimina cálculos
+                    manuais e perdas de estoque.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
 
-                <!-- Persona 1: Artesã de Ponto Fixo -->
+                <!-- Segment 1: Artesãos e Kits de Balcão -->
                 <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
-                                alt="Mariana Silva" class="w-16 h-16 rounded-2xl object-cover ring-4 ring-amber-100">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                                <i data-lucide="store" class="w-7 h-7"></i>
+                            </div>
                             <div>
-                                <h4 class="font-heading font-bold text-lg text-slate-900">Mariana Silva</h4>
-                                <p class="text-xs font-semibold text-amber-600">Artesã de Ímãs Decorativos & Doces</p>
-                                <p class="text-xs text-slate-400">Distribui em 14 cafeterias e panificadoras</p>
+                                <h3 class="font-heading font-bold text-xl text-slate-900">Kits de Balcão & Pontos
+                                    Comerciais</h3>
+                                <p class="text-xs font-semibold text-amber-600">Artesãos, Confeitarias e Fabricantes</p>
+                                <p class="text-xs text-slate-400">Cafeterias, padarias, restaurantes e comércio parceiro
+                                </p>
                             </div>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            "Antes eu entrava nas cafeterias com uma pasta cheia de fichas de papel. Quando a atendente
-                            falava que vendeu, eu perdia 10 minutos fazendo contas com pressa no caixa. Com o
-                            MostruárioApp, eu chego, conto as 3 peças que sobraram no expositor, o app dá R$ 48,00 na
-                            hora, mostro o Pix e saio com o novo kit reposto em 40 segundos!"
-                        </p>
+
+                        <div class="space-y-3.5 text-sm text-slate-600 leading-relaxed">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Contagem reversa expressa:</strong> Você não pede relatório de vendas.
+                                    Chega ao local, conta as poucas peças que restaram no expositor e o app calcula as
+                                    vendidas.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Margem fixa sem confusão:</strong> Preço de vitrine e fatia do lojista
+                                    pré-configurados. O valor do acerto é exibido na hora sem atrito com o
+                                    atendente.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Cobrança Pix imediata:</strong> Gere o QR Code EMV direto na sua tela sem
+                                    internet para quitação no ato pelo caixa do estabelecimento.</span>
+                            </div>
+                        </div>
                     </div>
+
                     <div
-                        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>Uso: <strong>Kit Balcão Padrão</strong></span>
-                        <span class="text-emerald-600 font-bold">14 pontos gerenciados</span>
+                        class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span>Fluxo: <strong>Margem Fixa / Unidade</strong></span>
+                        <span
+                            class="text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">Comodato
+                            de Displays</span>
                     </div>
                 </div>
 
-                <!-- Persona 2: Maleteira de Semijoias -->
+                <!-- Segment 2: Distribuidoras e Maleteiras -->
                 <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=150&q=80"
-                                alt="Camila Albuquerque"
-                                class="w-16 h-16 rounded-2xl object-cover ring-4 ring-indigo-100">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0">
+                                <i data-lucide="briefcase" class="w-7 h-7"></i>
+                            </div>
                             <div>
-                                <h4 class="font-heading font-bold text-lg text-slate-900">Camila Albuquerque</h4>
-                                <p class="text-xs font-semibold text-indigo-600">Distribuidora de Semijoias & Pratas</p>
-                                <p class="text-xs text-slate-400">22 revendedoras comissionadas (35% comissão)</p>
+                                <h3 class="font-heading font-bold text-xl text-slate-900">Maletas & Revendedoras
+                                    Externas</h3>
+                                <p class="text-xs font-semibold text-indigo-600">Semijoias, Pratas, Cosméticos e
+                                    Vestuário</p>
+                                <p class="text-xs text-slate-400">Promotoras, consultoras e revenda comissionada</p>
                             </div>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            "Minhas revendedoras moram em bairros onde o 4G é péssimo. Se dependesse de internet, eu não
-                            conseguia fechar acerto. O MostruárioApp funciona liso no offline, calcula os 35% de
-                            comissão sem errar um centavo e a revendedora assina na tela do celular. Depois envio o PDF
-                            discriminado no WhatsApp dela. Transmitiu um profissionalismo absurdo."
-                        </p>
+
+                        <div class="space-y-3.5 text-sm text-slate-600 leading-relaxed">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Rateio de comissão automático:</strong> Configure a porcentagem acordada
+                                    (ex: 30%, 35%, 40%) e receba a prestação de contas exata sem calculadoras.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Assinatura digital na tela:</strong> A revendedora confere a devolução e
+                                    assina digitalmente no seu telefone, dando validade ao acerto.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Romaneio profissional em PDF:</strong> Envie o comprovante completo do
+                                    lote pelo WhatsApp, com itens acertados, comissão apurada e novo saldo em
+                                    aberto.</span>
+                            </div>
+                        </div>
                     </div>
+
                     <div
-                        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>Uso: <strong>Maletas de 60 itens</strong></span>
-                        <span class="text-indigo-600 font-bold">R$ 18.000 em giro ativo</span>
+                        class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span>Fluxo: <strong>Comissão Percentual</strong></span>
+                        <span
+                            class="text-indigo-700 font-bold bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200">Romaneios
+                            com Assinatura</span>
                     </div>
                 </div>
 
@@ -1056,7 +1169,7 @@
                 <!-- Brand Info -->
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <img src="assets/images/logowobg.png" alt="MostruárioApp Logo"
+                        <img src="assets/images/mostruarioapp.svg" alt="MostruárioApp Logo"
                             class="w-9 h-9 rounded-lg object-contain">
                         <span class="font-heading font-extrabold text-lg text-white">Mostruário<span
                                 class="text-amber-500">App</span></span>
@@ -1088,13 +1201,15 @@
                     <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-3">Legal &
                         Privacidade</h4>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#" onclick="openModal('privacy'); return false;"
-                                class="hover:text-amber-400 transition-colors">Política de Privacidade</a></li>
-                        <li><a href="#" onclick="openModal('terms'); return false;"
-                                class="hover:text-amber-400 transition-colors">Termos de Uso</a></li>
-                        <li><a href="#" class="hover:text-amber-400 transition-colors">Segurança de Dados SQLite</a>
+                        <li><a href="privacidade.html" class="hover:text-amber-400 transition-colors">Política de
+                                Privacidade</a></li>
+                        <li><a href="termos-de-uso.html" class="hover:text-amber-400 transition-colors">Termos de
+                                Uso</a></li>
+                        <li><a href="privacidade.html#seguranca"
+                                class="hover:text-amber-400 transition-colors">Segurança de Dados SQLite</a>
                         </li>
-                        <li><a href="#" class="hover:text-amber-400 transition-colors">Contato e Suporte</a></li>
+                        <li><a href="privacidade.html#contato" class="hover:text-amber-400 transition-colors">Contato e
+                                Suporte</a></li>
                     </ul>
                 </div>
 
