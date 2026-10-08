@@ -54,6 +54,97 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Application JS & Tailwind Config -->
     <script src="js/main.js"></script>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.mostruarioapp.com.br/#app",
+          "name": "MostruárioApp",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Android",
+          "description": "Aplicativo móvel 100% offline para gestão de mostruários, consignações de semijoias e acertos de balcão com contagem reversa e Pix offline.",
+          "image": "https://www.mostruarioapp.com.br/assets/images/app-screen.png",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "BRL",
+            "category": "Freemium"
+          },
+          "installUrl": "https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp",
+          "publisher": {
+            "@type": "Organization",
+            "name": "ArtCoder Sistemas e Tecnologia Ltda",
+            "url": "https://www.mostruarioapp.com.br"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.mostruarioapp.com.br/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O MostruárioApp realmente funciona sem internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim, 100%. O MostruárioApp foi concebido com arquitetura Offline-First. Todo o catálogo, romaneios, histórico de acertos e cálculo matemático de QR Code Pix operam no banco local SQLite do seu aparelho sem necessitar de 3G, 4G ou Wi-Fi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona a contagem reversa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em vez de conferir cada peça vendida, você só conta o que sobrou no mostruário. O aplicativo subtrai automaticamente o saldo restante da carga inicial entregue e calcula instantaneamente a comissão e o valor a receber."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o Pix offline sem conexão?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O MostruárioApp gera matematicamente a cadeia estática EMV padrão Banco Central no próprio celular. Sua parceira abre o banco dela, lê a tela do seu celular e efetua o pagamento na hora."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O plano grátis tem limite de tempo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. O plano gratuito é vitalício e permite gerenciar até 3 mostruários/parceiros ativos com romaneios ilimitados sem qualquer cobrança ou necessidade de cartão."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Meus dados ficam seguros?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Todos os dados comerciais permanecem exclusivamente criptografados no banco de dados local do seu dispositivo móvel, em estrita conformidade com a LGPD."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Preciso cadastrar cartão de crédito para testar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. Não solicitamos dados de pagamento para download ou uso da versão gratuita."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.mostruarioapp.com.br/#organization",
+          "name": "ArtCoder Sistemas e Tecnologia Ltda",
+          "url": "https://www.mostruarioapp.com.br",
+          "logo": "https://www.mostruarioapp.com.br/assets/images/mostruarioapp.svg"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-amber-900">
