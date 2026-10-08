@@ -61,7 +61,7 @@ Será injetado em `index.html` um bloco JSON-LD contendo múltiplos schemas inte
 * `applicationCategory`: `BusinessApplication`
 * `operatingSystem`: `Android`
 * `offers`: `Offer` com `price: 0.00`, `priceCurrency: BRL` (Freemium)
-* `installUrl`: `https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp`
+* `installUrl`: `https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app`
 * `description`: `Aplicativo móvel 100% offline para gestão de mostruários, consignações de semijoias e acertos de balcão com contagem reversa.`
 
 ### 3.2. `FAQPage`
@@ -125,7 +125,7 @@ Sitemap: https://www.mostruarioapp.com.br/sitemap.xml
 
 ### 5.2. Links de CTA Atualizados
 Todos os botões de ação na landing page passarão a ter links funcionais e identificadores únicos de rastreamento:
-* Link de destino: `https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp`
+* Link de destino: `https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app`
 * Atributos: `target="_blank" rel="noopener noreferrer"`
 * Localizações monitoradas:
   * `navbar_cta` ("Baixar Grátis" no menu superior)

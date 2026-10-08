@@ -11,7 +11,7 @@
 ## Global Constraints
 
 - Domínio canônico oficial fixo: `https://www.mostruarioapp.com.br` (com `www`).
-- Google Play URL: `https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp`.
+- Google Play URL: `https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app`.
 - Contêiner GTM mantido: `GTM-NMLF6SWM`.
 - Todos os links externos abrem em nova aba com `target="_blank" rel="noopener noreferrer"`.
 - Código limpo, sem dependências externas adicionais, compatível com os navegadores atuais.
@@ -145,7 +145,7 @@ Incluir no `<head>` de `index.html`:
         "priceCurrency": "BRL",
         "category": "Freemium"
       },
-      "installUrl": "https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp",
+      "installUrl": "https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app",
       "publisher": {
         "@type": "Organization",
         "name": "ArtCoder Sistemas e Tecnologia Ltda",
@@ -238,13 +238,13 @@ git commit -m "feat(seo): add Schema.org JSON-LD for SoftwareApplication, FAQPag
 - Modify: `index.html`
 
 **Interfaces:**
-- Consumes: Google Play Store URL `https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp`.
+- Consumes: Google Play Store URL `https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app`.
 - Produces: Tags `<a>` semânticas com atributo de rastreamento `data-track-cta` e identificadores para o Google Play.
 
 - [ ] **Step 1: Atualizar o botão da Navbar**
 Mudar de `#download` para link direto ou link com tracking:
 ```html
-<a href="https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp"
+<a href="https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app"
    target="_blank" rel="noopener noreferrer" data-track-cta="navbar"
    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 text-sm font-semibold shadow-md transition-all hover:scale-105">
     <i data-lucide="arrow-down-to-line" class="w-4 h-4 text-amber-400"></i>
@@ -255,7 +255,7 @@ Mudar de `#download` para link direto ou link com tracking:
 - [ ] **Step 2: Atualizar o botão do Hero (Google Play)**
 Mudar o `<button>` em `#download` para `<a>`:
 ```html
-<a href="https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp"
+<a href="https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app"
    target="_blank" rel="noopener noreferrer" data-track-cta="hero"
    class="w-full sm:w-auto flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer">
     <i data-lucide="play" class="w-6 h-6 fill-amber-400 text-amber-400"></i>
@@ -307,7 +307,7 @@ document.querySelectorAll('[data-track-cta]').forEach(cta => {
         const location = this.getAttribute('data-track-cta');
         trackEvent('download_click', {
             cta_location: location,
-            destination_url: this.getAttribute('href') || 'https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp'
+            destination_url: this.getAttribute('href') || 'https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app'
         });
     });
 });

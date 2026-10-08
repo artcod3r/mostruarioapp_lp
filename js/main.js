@@ -269,7 +269,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const location = this.getAttribute('data-track-cta');
             trackEvent('download_click', {
                 cta_location: location,
-                destination_url: this.getAttribute('href') || 'https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp'
+                destination_url: this.getAttribute('href') || 'https://play.google.com/store/apps/details?id=br.com.mostruarioapp.mostruario_app'
             });
         });
     });
