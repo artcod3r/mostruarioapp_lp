@@ -52,11 +52,27 @@ const kits = {
     }
 };
 
+// DataLayer Tracking Helper
+function trackEvent(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: eventName,
+        ...params,
+        timestamp: new Date().toISOString()
+    });
+}
+
 let currentKitKey = 'imas';
 
 function selectKit(key) {
     currentKitKey = key;
     const kit = kits[key];
+
+    trackEvent('simulator_use', {
+        action: 'select_kit',
+        kit_key: key,
+        kit_name: kit.name
+    });
 
     // Update UI Tabs
     const imasBtn = document.getElementById('kit-imas-btn');
@@ -118,6 +134,11 @@ function formatBRL(amount) {
 }
 
 function simulateCopyPix() {
+    trackEvent('pix_copy', {
+        kit_key: currentKitKey,
+        kit_name: kits[currentKitKey].name
+    });
+
     const btn = document.getElementById('copy-btn-text');
     const originalText = btn.textContent;
 
@@ -136,6 +157,11 @@ function simulateCopyPix() {
 }
 
 function simulatePdfNotice() {
+    trackEvent('simulator_pdf_preview', {
+        kit_key: currentKitKey,
+        kit_name: kits[currentKitKey].name
+    });
+
     const feedback = document.getElementById('sim-feedback');
     feedback.classList.remove('hidden');
     setTimeout(() => {
@@ -158,11 +184,24 @@ function toggleFaq(index) {
     if (isHidden) {
         answer.classList.remove('hidden');
         icon.style.transform = 'rotate(180deg)';
+
+        const questionBtn = document.querySelector(`button[onclick="toggleFaq(${index})"]`);
+        const questionSpan = questionBtn ? questionBtn.querySelector('span') : null;
+        const questionTitle = questionSpan ? questionSpan.textContent.trim() : `FAQ #${index}`;
+
+        trackEvent('faq_open', {
+            faq_index: index,
+            question_title: questionTitle
+        });
     }
 }
 
 // Modal legal content
 function openModal(type) {
+    trackEvent('legal_modal_open', {
+        modal_type: type
+    });
+
     const modal = document.getElementById('legal-modal');
     const content = document.getElementById('modal-content');
 
@@ -197,6 +236,7 @@ function closeModal() {
 }
 
 // Expose functions to global scope for HTML inline handlers
+window.trackEvent = trackEvent;
 window.selectKit = selectKit;
 window.updateCalculation = updateCalculation;
 window.formatBRL = formatBRL;
@@ -222,4 +262,32 @@ window.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
     updateCalculation(3);
+
+    // Track all CTA button clicks
+    document.querySelectorAll('[data-track-cta]').forEach(cta => {
+        cta.addEventListener('click', function () {
+            const location = this.getAttribute('data-track-cta');
+            trackEvent('download_click', {
+                cta_location: location,
+                destination_url: this.getAttribute('href') || 'https://play.google.com/store/apps/details?id=br.com.artcoder.mostruarioapp'
+            });
+        });
+    });
+
+    // Track simulator slider change upon release
+    const slider = document.getElementById('sobras-slider');
+    if (slider) {
+        slider.addEventListener('change', (e) => {
+            const kit = kits[currentKitKey];
+            const sobras = parseInt(e.target.value, 10);
+            const vendidas = kit.totalItems - sobras;
+            trackEvent('simulator_use', {
+                action: 'slider_change',
+                kit_key: currentKitKey,
+                kit_name: kit.name,
+                pieces_sold: vendidas,
+                pieces_leftover: sobras
+            });
+        });
+    }
 });
