@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Banner MostruárioApp (1024x500)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #060913;
+            color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Plus Jakarta Sans", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1080px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 0 0 6px 0;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: #f59e0b;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            background: #050811;
+            max-width: 100%;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .upload-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #0f172a;
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .upload-card input[type="file"] {
+            font-size: 12px;
+            color: #cbd5e1;
+            cursor: pointer;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 26px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary {
+            background: #d97706;
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(217, 119, 6, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45);
+        }
+
+        .btn-secondary {
+            background: #1e293b;
+            color: #cbd5e1;
+            border: 1px solid #334155;
+        }
+
+        .btn-secondary:hover {
+            background: #334155;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .specs-info {
+            color: #64748b;
+            margin-top: 16px;
+            font-size: 12.5px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mostruário<span>App</span> • Banner Oficial Google Play</h1>
+            <p class="subtitle">Feature Graphic 1024 x 500 px • Design Ardósia & Âmbar com Geometria Oficial</p>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="banner" width="1024" height="500"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="upload-card">
+                <label for="logoUpload">Substituir logo:</label>
+                <input type="file" id="logoUpload" accept=".svg,.png,.jpg,.jpeg,.webp">
+            </div>
+            <button id="resetBtn" class="btn-secondary" onclick="resetToNativeLogo()">Restaurar Logo Vetorial</button>
+            <button id="downloadBtn" class="btn-primary">
+                Baixar Banner (1024x500 PNG)
+                <span class="badge-pill">Play Store</span>
+            </button>
+        </div>
+
+        <p class="specs-info">
+            Dimensão exata 1024 x 500 px • Sem canal alfa / transparência • Margens de segurança de 50px respeitadas.
+        </p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('banner');
+        const ctx = canvas.getContext('2d');
+        let customLogoImg = null;
+
+        function renderBanner() {
+            const W = 1024;
+            const H = 500;
+
+            // 1. Fundo Gradiente Ardósia Profundo (#050811 -> #0b1120 -> #0f172a -> #1e1b4b)
+            const bgGrad = ctx.createLinearGradient(0, 0, W, H);
+            bgGrad.addColorStop(0, '#050811');
+            bgGrad.addColorStop(0.35, '#0b1120');
+            bgGrad.addColorStop(0.75, '#0f172a');
+            bgGrad.addColorStop(1, '#1e1b4b');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, W, H);
+
+            // Glow Âmbar e Indigo no topo e centro
+            const glowCenter = ctx.createRadialGradient(W / 2, 130, 20, W / 2, 130, 390);
+            glowCenter.addColorStop(0, 'rgba(245, 158, 11, 0.26)');
+            glowCenter.addColorStop(0.45, 'rgba(79, 70, 229, 0.09)');
+            glowCenter.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = glowCenter;
+            ctx.fillRect(0, 0, W, H);
+
+            // Grid geométrico sutil
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.032)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < W; x += 36) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0); ctx.lineTo(x, H);
+                ctx.stroke();
+            }
+            for (let y = 0; y < H; y += 36) {
+                ctx.beginPath();
+                ctx.moveTo(0, y); ctx.lineTo(W, y);
+                ctx.stroke();
+            }
+
+            // 2. Renderização da Logo Oficial MostruárioApp
+            const logoSize = 138;
+            const logoCenterX = W / 2;
+            const logoCenterY = 126;
+
+            if (customLogoImg) {
+                ctx.save();
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.65)';
+                ctx.shadowBlur = 24;
+                ctx.shadowOffsetY = 8;
+                ctx.drawImage(
+                    customLogoImg,
+                    logoCenterX - logoSize / 2,
+                    logoCenterY - logoSize / 2,
+                    logoSize,
+                    logoSize
+                );
+                ctx.restore();
+            } else {
+                drawOfficialVectorLogo(ctx, logoCenterX, logoCenterY, logoSize);
+            }
+
+            // 3. Tipografia: Logotipo "MostruárioApp"
+            ctx.font = '800 48px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+
+            const textMostruario = 'Mostruário';
+            const textApp = 'App';
+            const wMostruario = ctx.measureText(textMostruario).width;
+            const wApp = ctx.measureText(textApp).width;
+            const startX = (W - (wMostruario + wApp)) / 2;
+            const textBaselineY = 258;
+
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+
+            ctx.save();
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
+            ctx.shadowBlur = 12;
+            ctx.shadowOffsetY = 4;
+
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillText(textMostruario, startX, textBaselineY);
+
+            ctx.fillStyle = '#f59e0b';
+            ctx.fillText(textApp, startX + wMostruario, textBaselineY);
+            ctx.restore();
+
+            // 4. Frase de Destaque / Proposta de Valor
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillText('Controle de Consignação, Maletas & Kits', W / 2, 318);
+
+            // Subtítulo descritivo
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '500 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillText('Acerto presencial em menos de 15 segundos • Pix Offline • Comodatos', W / 2, 355);
+
+            // 5. Badges de Funcionalidades no Rodapé
+            const badges = [
+                { text: '⚡ 100% OFFLINE-FIRST', color: '#fbbf24', bg: 'rgba(245, 158, 11, 0.12)', border: 'rgba(245, 158, 11, 0.35)' },
+                { text: '⏱️ CONTAGEM REVERSA', color: '#38bdf8', bg: 'rgba(56, 189, 248, 0.12)', border: 'rgba(56, 189, 248, 0.35)' },
+                { text: '📱 PIX SEM INTERNET', color: '#34d399', bg: 'rgba(52, 211, 153, 0.12)', border: 'rgba(52, 211, 153, 0.35)' },
+                { text: '🛡️ CONTROLE COMODATOS', color: '#c084fc', bg: 'rgba(192, 132, 252, 0.12)', border: 'rgba(192, 132, 252, 0.35)' }
+            ];
+
+            const badgeY = 422;
+            const badgeW = 202;
+            const badgeH = 34;
+            const gap = 16;
+            const totalRowWidth = (badges.length * badgeW) + ((badges.length - 1) * gap);
+            let badgeStartX = (W - totalRowWidth) / 2 + (badgeW / 2);
+
+            ctx.font = '700 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+
+            badges.forEach((b, i) => {
+                const bx = badgeStartX + (i * (badgeW + gap));
+
+                // Fundo da badge
+                ctx.fillStyle = b.bg;
+                ctx.beginPath();
+                ctx.roundRect(bx - badgeW / 2, badgeY - badgeH / 2, badgeW, badgeH, 17);
+                ctx.fill();
+
+                // Borda
+                ctx.strokeStyle = b.border;
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+
+                // Texto
+                ctx.fillStyle = b.color;
+                ctx.textAlign = 'center';
+                ctx.fillText(b.text, bx, badgeY);
+            });
+        }
+
+        function drawOfficialVectorLogo(ctx, cx, cy, size) {
+            ctx.save();
+            ctx.translate(cx, cy);
+
+            const scale = size / 200; // Normalizado para grid 200x200
+            ctx.scale(scale, scale);
+
+            // 1. Squircle de fundo (Slate-800 escuro com relevo suave)
+            ctx.save();
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+            ctx.shadowBlur = 24;
+            ctx.shadowOffsetY = 8;
+
+            ctx.fillStyle = '#2f3b4c'; // Tom ardósia do ícone
+            ctx.beginPath();
+            ctx.roundRect(-96, -96, 192, 192, 44);
+            ctx.fill();
+
+            ctx.strokeStyle = '#3e4c60';
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+            ctx.restore();
+
+            // 2. Alça superior da maleta (Cinza claro / Slate)
+            ctx.strokeStyle = '#9ca8ba';
+            ctx.lineWidth = 8;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(-28, -42);
+            ctx.lineTo(-28, -60);
+            ctx.arcTo(-28, -70, -18, -70, 10);
+            ctx.lineTo(18, -70);
+            ctx.arcTo(28, -70, 28, -60, 10);
+            ctx.lineTo(28, -42);
+            ctx.stroke();
+
+            // 3. Moldura externa da maleta (Cinza claro / Slate)
+            ctx.beginPath();
+            ctx.roundRect(-62, -42, 124, 94, 18);
+            ctx.stroke();
+
+            // 4. Mostruário Geométrico 3D / Nicho Interno em Âmbar Dourado
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 6.5;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // Retângulo externo do mostruário
+            const outX = -46;
+            const outY = -28;
+            const outW = 80;
+            const outH = 54;
+            ctx.strokeRect(outX, outY, outW, outH);
+
+            // Retângulo interno (profundidade de nicho)
+            const inX = -28;
+            const inY = -16;
+            const inW = 46;
+            const inH = 30;
+            ctx.strokeRect(inX, inY, inW, inH);
+
+            // Linhas de perspectiva conectando o fundo aos vértices externos
+            ctx.beginPath();
+            ctx.moveTo(outX, outY);
+            ctx.lineTo(inX, inY);
+
+            ctx.moveTo(outX + outW, outY);
+            ctx.lineTo(inX + inW, inY);
+
+            ctx.moveTo(outX, outY + outH);
+            ctx.lineTo(inX, inY + inH);
+
+            ctx.moveTo(outX + outW, outY + outH);
+            ctx.lineTo(inX + inW, inY + inH);
+            ctx.stroke();
+
+            // 5. Círculo do Visto / Ciclo de Rotação (Canto inferior direito)
+            const badgeCx = 34;
+            const badgeCy = 38;
+            const badgeRadius = 38;
+
+            // Fundo escuro atrás do badge para recortar a linha da maleta
+            ctx.fillStyle = '#2f3b4c';
+            ctx.beginPath();
+            ctx.arc(badgeCx, badgeCy, badgeRadius + 3, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Círculo com flecha de rotação/ciclo em Âmbar
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 7.5;
+            ctx.beginPath();
+            ctx.arc(badgeCx, badgeCy, badgeRadius - 4, 0.45 * Math.PI, 1.95 * Math.PI, false);
+            ctx.stroke();
+
+            // Ponta da flecha de rotação
+            ctx.fillStyle = '#f59e0b';
+            const arrowAngle = 1.95 * Math.PI;
+            const arrowTipX = badgeCx + (badgeRadius - 4) * Math.cos(arrowAngle);
+            const arrowTipY = badgeCy + (badgeRadius - 4) * Math.sin(arrowAngle);
+
+            ctx.beginPath();
+            ctx.moveTo(arrowTipX + 7, arrowTipY + 4);
+            ctx.lineTo(arrowTipX + 13, arrowTipY - 14);
+            ctx.lineTo(arrowTipX - 7, arrowTipY - 5);
+            ctx.closePath();
+            ctx.fill();
+
+            // Visto / Checkmark central em Âmbar
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 9;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(badgeCx - 14, badgeCy - 2);
+            ctx.lineTo(badgeCx - 3, badgeCy + 10);
+            ctx.lineTo(badgeCx + 26, badgeCy - 22);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        // Upload de Logo personalizada (SVG, PNG, JPG, WebP)
+        document.getElementById('logoUpload').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (evt) {
+                    const img = new Image();
+                    img.onload = function () {
+                        customLogoImg = img;
+                        renderBanner();
+                    };
+                    img.src = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function resetToNativeLogo() {
+            customLogoImg = null;
+            document.getElementById('logoUpload').value = '';
+            renderBanner();
+        }
+
+        // Download do PNG oficial do Banner
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'feature-graphic-mostruarioapp.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+
+        // Inicialização do Canvas
+        window.onload = function () {
+            renderBanner();
+        };
+    </script>
+</body>
+
+</html>
